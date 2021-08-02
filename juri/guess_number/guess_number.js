@@ -14,7 +14,7 @@ function checkGuess() {
     if (guessCount === 1) {
         guesses.textContent = 'Previous guesses: ';
     }
-    guesses.textContent += userGuess + '';
+    guesses.textContent += userGuess + ', ';
 
     if (userGuess === randomNumber) {
         lastResult.textContent = 'Congratulation! You got it right!';
@@ -67,7 +67,6 @@ function resetGame() {
    lastResult.style.backgroundColor = 'white';
    randomNumber = Math.floor(Math.random() * 100) +1;
 }
-
 
 
 
