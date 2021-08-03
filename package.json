@@ -1,0 +1,30 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "JavaScript lessons",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "start": "npx serve",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glebhg/javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "lesson"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/glebhg/javascript/issues"
+  },
+  "homepage": "https://github.com/glebhg/javascript#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.14.5",
+    "jest": "^27.0.6"
+  }
+}
