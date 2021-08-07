@@ -4,8 +4,12 @@
  * @returns {boolean} True if "str" is a palindrome
  */
 export function isPalindrome(str) {
-  return str === str.split('').reverse().join('');
+  if (str) {
+    return str === str.split("").reverse().join("");
+  } else {
+    return false;
   }
+}
 
 /**
  * Returns maximum number from a "arrayOfNumbers" array
@@ -23,5 +27,9 @@ export function maxNumber(arrayOfNumbers) {
  * @returns {string} Reverted string
  */
 export function reverse(str) {
- return str = str.split('').reverse().join('');
+  if (str) {
+    return (str = str.split("").reverse().join(""));
+  } else {
+    return (str = "");
+  }
 }
