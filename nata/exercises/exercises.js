@@ -5,7 +5,11 @@
  */
 export function isPalindrome(str) {
   if (str) {
-    return str === str.split("").reverse().join("");
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+      newString += str[i];
+    }
+    return newString === str;
   } else {
     return false;
   }
@@ -17,7 +21,13 @@ export function isPalindrome(str) {
  * @returns {number} Maximum number from array
  */
 export function maxNumber(arrayOfNumbers) {
-  return Math.max.apply(null, arrayOfNumbers);
+  var max = arrayOfNumbers[0];
+  for (var i = 1; i < arrayOfNumbers.length; i++) {
+    if (arrayOfNumbers[i] > max) {
+      max = arrayOfNumbers[i];
+    }
+  }
+  return max;
 }
 
 /**
@@ -28,7 +38,11 @@ export function maxNumber(arrayOfNumbers) {
  */
 export function reverse(str) {
   if (str) {
-    return (str = str.split("").reverse().join(""));
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+      newString += str[i];
+    }
+    return newString;
   } else {
     return (str = "");
   }
