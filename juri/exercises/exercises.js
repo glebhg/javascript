@@ -3,8 +3,17 @@
  * @param {string} str String to verify
  * @returns {boolean} True if "str" is a palindrome
  */
+
+
 export function isPalindrome(str) {
   // TODO
+  var strLenth = str.length;
+  var strReverse = str.split('').reverse().join('');
+  if(strReverse === str){
+    return "true";
+  } else {
+    return "false";
+  }
 }
 
 /**
@@ -13,7 +22,14 @@ export function isPalindrome(str) {
  * @returns {number} Maximum number from array
  */
 export function maxNumber(arrayOfNumbers) {
-  // TODO
+  var maxNumber = arrayOfNumbers[0];
+  for( var i = 0; i < arrayOfNumbers.length; i++ ){
+    if (maxNumber < arrayOfNumbers[i]) {
+      maxNumber = arrayOfNumbers[i];
+    }
+    
+  }
+  return maxNumber;
 }
 
 /**
@@ -23,5 +39,7 @@ export function maxNumber(arrayOfNumbers) {
  * @returns {string} Reverted string
  */
 export function reverse(str) {
-  // TODO
+  var reverse = str.split('').reverse().join('');
+  
+  return reverse;  
 }
