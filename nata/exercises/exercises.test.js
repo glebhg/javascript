@@ -43,7 +43,7 @@ describe("Reverse Suite", function () {
   });
 
   it("should return empty string for empty input", function () {
-    expect(reverse("")).toBe("");
+    expect().toBe("");
   });
 
   it("should return empty string for null and undefined", function () {
