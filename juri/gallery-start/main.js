@@ -3,16 +3,21 @@ var thumbBar = document.querySelector('.thumb-bar');
 var btn = document.querySelector('button');
 var overlay = document.querySelector('.overlay');
 
+var displayedImageHandler = function (e) {
+  displayedImage.src = e.target.src;
+ }; 
+ 
+
 for (var i = 1; i<5; i++) {
 var newImage = document.createElement('img');
-newImage.setAttribute('src', i);
+newImage.setAttribute('src','images/pic'+ i +'.jpg');
 thumbBar.appendChild(newImage);
-newImage.onclick = function () {
-  displayedImage.src =
- };
+//newImage.addEventListener('click', displayedImageHandler);
+}
 
+var thumbBarPar = e.stopPropagation();
 
-  btn.onclick = function() {
+btn.onclick = function() {
    if (btn === "dark") {
    btn.setAttribute('class', 'light');
    btn.textContent = "Cветлее";
