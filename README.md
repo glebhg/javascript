@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Node.js 14
+- Node.js 12
 - NPM 6
 
 ## Getting Started
