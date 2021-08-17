@@ -8,11 +8,7 @@
 export function isPalindrome(str) {
   // TODO
   var strReverse = str.split('').reverse().join('');
-  if(strReverse === str){
-    return "true";
-  } else {
-    return "false";
-  }
+return strReverse === str;
 }
 
 /**
