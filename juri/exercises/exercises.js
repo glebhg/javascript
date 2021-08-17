@@ -38,7 +38,5 @@ export function maxNumber(arrayOfNumbers) {
  * @returns {string} Reverted string
  */
 export function reverse(str) {
-  var reverse = str.split('').reverse().join('');
-  
-  return reverse;  
+return str.split('').reverse().join('');
 }
