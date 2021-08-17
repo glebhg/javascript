@@ -7,7 +7,6 @@
 
 export function isPalindrome(str) {
   // TODO
-  var strLenth = str.length;
   var strReverse = str.split('').reverse().join('');
   if(strReverse === str){
     return "true";
