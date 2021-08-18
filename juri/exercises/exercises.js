@@ -7,11 +7,9 @@
 
  export function isPalindrome(str) {
   // TODO
-    if (str) {
-    return str === str.split('').reverse().join('');
-    }else {
-      return false;
-    }
+    if (!str) return false;
+    
+    return str === str.split('').reverse().join('');    
     
   }
 
