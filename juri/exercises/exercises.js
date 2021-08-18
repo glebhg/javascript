@@ -37,10 +37,8 @@
    * @returns {string} Reverted string
    */
   export function reverse(str) {
-    if (str) {
-      return (str = str.split('').reverse().join(''));
-    } else {
-      return (str = '');
-    }
+    if (!str) return '';
+     
+    return (str = str.split('').reverse().join(''));
 
   }
