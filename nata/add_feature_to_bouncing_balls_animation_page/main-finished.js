@@ -1,12 +1,11 @@
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
-
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
+const paragraph = document.querySelector("p");
 
 function random(min, max) {
-  const num = Math.floor(Math.random() * (max - min + 1)) + min;
-  return num;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function Shape(x, y, velX, velY, exists) {
@@ -82,7 +81,7 @@ Ball.prototype.collisionDetect = function () {
 function EvilCircle(x, y, exists) {
   Shape.call(this, x, y, 20, 20, exists);
   this.color = "white";
-  this.size = 10;
+  this.size = 20;
 }
 
 EvilCircle.prototype = Object.create(Shape.prototype);
@@ -166,9 +165,16 @@ while (balls.length < 15) {
 let evil = new EvilCircle(random(0, width), random(0, height), true);
 evil.setControls();
 
+function updateBallsCount() {
+  paragraph.textContent =
+    "Ball counter: " + balls.filter((ball) => ball.exists).length;
+}
+
 function loop() {
   ctx.fillStyle = "rgba(0,0,0,0.25)";
   ctx.fillRect(0, 0, width, height);
+
+  updateBallsCount();
 
   for (let i = 0; i < balls.length; i++) {
     if (balls[i].exists) {
