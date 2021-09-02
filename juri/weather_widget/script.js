@@ -43,7 +43,7 @@ form.addEventListener("submit", e => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
   async function myFetch() {
-    let response = await fetch(URL);
+    let response = await fetch(url);
     let data = await response.json(); 
     const { main, name, sys, weather } = data;
     const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
