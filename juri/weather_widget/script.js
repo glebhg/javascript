@@ -9,8 +9,7 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   let inputVal = input.value;
 
-  const listItems = list.querySelectorAll(".ajax-section .city");
-  const listItemsArray = Array.from(listItems);
+  const listItemsArray = Array.from(list.querySelectorAll(".ajax-section .city"));
 
   if (listItemsArray.length > 0) {
     const filteredArray = listItemsArray.filter(el => {
