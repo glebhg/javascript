@@ -7,8 +7,9 @@ const list = document.querySelector(".ajax-section .cities");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const inputVal = input.value;
-  const listItems = list.querySelectorAll(".ajax-section .city");
-  const listItemsArray = Array.from(listItems);
+  const listItemsArray = Array.from(
+    list.querySelectorAll(".ajax-section .city")
+  );
 
   if (listItemsArray.length > 0) {
     const filteredArray = listItemsArray.filter((el) => {
@@ -39,14 +40,15 @@ form.addEventListener("submit", (e) => {
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
   async function myFetch() {
-    let response = await fetch(url);
-    let data = await response.json();
-    const { main, name, sys, weather } = data;
-    const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+    try {
+      let response = await fetch(url);
+      let data = await response.json();
+      const { main, name, sys, weather } = data;
+      const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
 
-    const li = document.createElement("li");
-    li.classList.add("city");
-    const markup = `
+      const li = document.createElement("li");
+      li.classList.add("city");
+      const markup = `
   <h2 class="city-name" data-name="${name},${sys.country}">
     <span>${name}</span>
     <sup>${sys.country}</sup>
@@ -58,13 +60,13 @@ form.addEventListener("submit", (e) => {
     <figcaption>${weather[0]["description"]}</figcaption>
   </figure>
 `;
-    li.innerHTML = markup;
-    list.appendChild(li);
+      li.innerHTML = markup;
+      list.appendChild(li);
+    } catch {
+      msg.textContent = "Please search for a valid city 😩";
+    }
   }
-  myFetch().catch(() => {
-    msg.textContent = "Please search for a valid city 😩";
-  });
-
+  myFetch();
   msg.textContent = "";
   form.reset();
   input.focus();
