@@ -42,6 +42,7 @@ form.addEventListener("submit", e => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
   async function myFetch() {
+    try {
     let response = await fetch(url);
     let data = await response.json(); 
     const { main, name, sys, weather } = data;
@@ -65,10 +66,11 @@ form.addEventListener("submit", e => {
       li.innerHTML = markup;
       list.appendChild(li);
     } 
-    myFetch()
-    .catch(() => {
-      msg.textContent = "Please search for a valid city 😩";
+    
+    catch(() => {
+      msg.textContent = "Please search for a valid city 😩"; 
     });
+    myFetch()
     
   msg.textContent = "";
   form.reset();
