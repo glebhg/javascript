@@ -1,10 +1,22 @@
-const form = document.querySelector(".top-banner form");
-const apiKey = "3c35006fceb2782bcc306a780629d75f";
-const msg = document.querySelector(".top-banner .msg");
-const input = document.querySelector(".top-banner input");
-const list = document.querySelector(".ajax-section .cities");
+// const msg = document.querySelector(".top-banner .msg");
+// const input = document.querySelector(".top-banner input");
+// const list = document.querySelector(".ajax-section .cities");
 
+const weather = [];
+const cities = [];
+
+const handleCityNameInput = (eventTarget) =>
+  eventTarget.querySelector("input[name=city]").value;
+
+const showWeather = () => {};
+
+const form = document.querySelector(".top-banner form");
 form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const cityName = handleCityNameInput(e.target);
+  console.log(cityName);
+});
+/*form.addEventListener("submit", (e) => {
   e.preventDefault();
   const inputVal = input.value;
   const listItemsArray = Array.from(
@@ -38,7 +50,6 @@ form.addEventListener("submit", (e) => {
     }
   }
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
   async function myFetch() {
     try {
       let response = await fetch(url);
@@ -71,3 +82,4 @@ form.addEventListener("submit", (e) => {
   form.reset();
   input.focus();
 });
+*/

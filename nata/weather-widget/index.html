@@ -11,7 +11,12 @@
       <div class="container">
         <h1 class="heading">Simple Weather App</h1>
         <form>
-          <input type="search" placeholder="Search for a city" autofocus />
+          <input
+            name="city"
+            type="search"
+            placeholder="Search for a city"
+            autofocus
+          />
           <button type="submit">SUBMIT</button>
           <span class="msg"></span>
         </form>
@@ -20,6 +25,6 @@
     <section class="ajax-section">
       <ul class="cities"></ul>
     </section>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
